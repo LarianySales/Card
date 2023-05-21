@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,77 @@
     <link rel="stylesheet" href="./style.css">
     <title>3D Flip Card</title>
 </head>
+
 <body>
     <main>
         <div class="flip-container">
-          <aside class="flip">
-              <article class="frente">
-                <img width="250px" height="328px" src="./img/Change of Heart by deadringer597 on DeviantArt.jpg" alt="">
-                  <h1>Leticia  Dias</h1>
-                  <hr>
-                 <p> me siga</p>
-                 <hr>
-                 <p>Maceió, Brasil</p>
-            </article>
+            <aside class="flip">
+                <article class="frente">
+                    <h1>Larrie Sales</h1>
+                    <div class="line"></div>
 
-            <article class="atras">
-                <h1>
-                    Full Stack Developer
-                </h1>
-                <p>Follow me</p>
-                <section class="icon">
-                    <img width="30px" height="30px" src="./img/instagram.png" alt="">
-                <img width="30px" height="30px" src="./img/linkedin.png" alt="">
-                <img width="30px" height="30px" src="./img/twitter_logo_icon_172135.png" alt="">
-                <img width="30px" height="30px" src="./img/github_logo_icon_175162.png" alt="">
-                </section>
-            </article>
-          </aside>
+                    <p class="local">Maceió, Brasil</p>
+                </article>
+
+                <article class="atras">
+                    <h1>
+                        Full Stack Developer
+                    </h1>
+                    <p>Follow me</p>
+                    <section class="icon">
+                        <button> <a href="https://instagram.com/aailnry?igshid=MzNlNGNkZWQ4Mg==">
+                                <img width="20px" height="20px" src="./img/instagram.png" alt="">
+                            </a></button>
+
+                        <button><a href="#">
+                                <img width="20px" height="20px" src="./img/linkedin.png" alt="">
+                            </a></button>
+
+                        <button>
+                            <a href="#">
+                                <img width="20px" height="20px" src="./img/twitter_logo_icon_172135.png" alt="">
+                            </a>
+                        </button>
+
+                        <button>
+                            <a href="https://github.com/LarianySales">
+                                <img width="20px" height="20px" src="./img/github_logo_icon_175162.png" alt="">
+                            </a>
+                        </button>
+                    </section>
+                </article>
+            </aside>
         </div>
-        <button>like</button>
 
-        
+        <button class="button" onclick="contar()">
+            <img class="curtida" src="./img/likeNormal.svg" width="25px" height="25px" alt="">
+            <p id="likes">0</p>
+        </button>
+
+
     </main>
+    <script>
+        const curtir = document.querySelector('.button')
+ 
+         curtir.addEventListener('click',()=>{
+          curtir.style.borderColor = '#ff0000';
+          let curtida = document.querySelector('.curtida').setAttribute('src', 'img/vermelho.svg')
+        //   let curtida = document.querySelector('.curtida').style.backgroundColor = '#ff0000'
+          let quantidade =document.getElementById('likes').style.color = '#ff0000';
+
+
+         })   
+        
+
+        let likes = 0
+        const countElement = document.getElementById("likes")
+
+        function contar() {
+            likes++
+            countElement.textContent = likes
+        }
+
+    </script>
 </body>
+
 </html>
